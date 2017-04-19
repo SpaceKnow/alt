@@ -7,7 +7,8 @@ export default function makeAction(alt, namespace, name, implementation, obj) {
   alt._actionsRegistry[id] = 1
 
 
-  let logAs, storeStateToLog
+  let logAs
+  let storeStateToLog
   // Set action's log level
   if (typeof Reflect === 'object' && fn.isFunction(Reflect.getOwnMetadata)) {
     logAs = Reflect.getOwnMetadata('alt:meta:logAs', implementation)
